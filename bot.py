@@ -34,12 +34,15 @@ message_num = 0
 # context. Error handlers also receive the raised TelegramError object in error.
 def start(update: telegram.Update, context):
     """Send a message when the command /start is issued."""
-    update.message.reply_text('Hi!')
+    update.message.reply_text('Hi! Используйте команду /help, чтобы узнать мои команды.')
 
 
 def help(update, context):
     """Send a message when the command /help is issued."""
-    update.message.reply_text('Help!')
+    update.message.reply_text(
+        'У этого бота есть одна команда - /last <количество сообщений>.\
+Она выводит ваши последние сообщения, которые не являются командами\
+(по умолчанию стоит значение 10). Удачи в пользовании нашим ботом.')
 
 
 def save(update: telegram.Update, context):
